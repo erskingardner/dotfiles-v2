@@ -1,3 +1,9 @@
+*** IMPORTANT ***
+
+This is a fork from holman's excellent dotfiles. It has helped me macke the big switch to zsh. I've customized only the parts that I've needed to customize for my env.
+
+*** /IMPORTANT ***
+
 # holman does dotfiles
 
 ## dotfiles
