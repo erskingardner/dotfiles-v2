@@ -55,7 +55,7 @@ directory_name(){
 
 export PROMPT=$'\n$(rvm_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
-  export RPROMPT="%{$fg_bold[light gray]%}%D %T%{$reset_color%}"
+  export RPROMPT="%{$fg_bold[green]%}[%~]%{$reset_color%}%{$fg_bold[light gray]%} %T %D{%a %e %b %Y}%{$reset_color%}"
 }
 
 precmd() {
