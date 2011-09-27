@@ -19,3 +19,8 @@ alias powr='touch tmp/restart.txt'
 alias ff3k='open -a Firefox http://localhost:3000'
 alias ch3k='open -a "Google Chrome" http://localhost:3000'
 alias sa3k='open -a Safari http://localhost:3000'
+alias 3k='open http://localhost:3000' # use the default browser
+
+# RVM aliases
+alias rv='ruby -v'
+alias gemsetl='rvm gemset list'
