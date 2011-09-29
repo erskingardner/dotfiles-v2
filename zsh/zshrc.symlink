@@ -4,6 +4,9 @@ export ZSH=$HOME/.dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Sites
 
+# iOS folder that we can `i [tab]` to
+export iOS=~/iOS
+
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
 
