@@ -11,5 +11,15 @@ fi
 
 # open the current directory with Finder.app
 alias f='open .'
+
 # open the current directory as a project with TextMate
 alias m='mate .'
+
+# create dir and cd into it
+function take {
+  mkdir $1
+  cd $1
+}
+
+# open dotfiles project with textmate
+alias dotme='mate ~/.dotfiles'
