@@ -15,6 +15,9 @@ alias f='open .'
 # open the current directory as a project with TextMate
 alias m='mate .'
 
+# open the current directoy as a project in XCode
+alias xc='open -a XCode .'
+
 # create dir and cd into it
 function take {
   mkdir $1
