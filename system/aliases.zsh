@@ -12,6 +12,9 @@ fi
 # open the current directory with Finder.app
 alias f='open .'
 
+# open the current directory as a project with SublimeText
+alias s='subl .'
+
 # open the current directory as a project with TextMate
 alias m='mate .'
 

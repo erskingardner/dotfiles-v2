@@ -1,1 +1,1 @@
-export EDITOR="$HOME/bin/mate -w"
+export EDITOR="$HOME/bin/subl -w"
