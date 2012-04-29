@@ -28,7 +28,7 @@ function take {
 }
 
 # open dotfiles project with textmate
-alias dotme='mate ~/.dotfiles'
+alias dotme='subl ~/.dotfiles'
 
 # ssh aliases
 alias mtssh='ssh jeffgardner.org@s39233.gridserver.com'
