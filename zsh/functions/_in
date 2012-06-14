@@ -1,0 +1,2 @@
+#compdef in
+_files -W $INTERCOM -/

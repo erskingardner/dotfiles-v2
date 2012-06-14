@@ -7,14 +7,16 @@
 #
 # I'm hardcoding it to an installed rvm (using rvm's `rvm 1.9.3,ruby /hub/path`
 # syntax is way too slow). It should work fine for those without rvm, though.
-if [[ -s $HOME/.rvm/scripts/rvm ]]
-then
-  if $(which hub &> /dev/null) && [[ -s $HOME/.rvm/rubies/ruby-1.9.3-p0 ]]
-  then
-    alias git='$HOME/.rvm/rubies/ruby-1.9.3-p0/bin/ruby `which hub`'
-  else
-  fi
-fi
+# if [[ -s $HOME/.rvm/scripts/rvm ]]
+# then
+#   if $(which hub &> /dev/null) && [[ -s $HOME/.rvm/rubies/ruby-1.9.3-p0 ]]
+#   then
+#     alias git='$HOME/.rvm/rubies/ruby-1.9.3-p0/bin/ruby `which hub`'
+#   else
+#   fi
+# fi
+# Hub!
+alias git=hub
 
 # The rest of my fun git aliases
 alias gl='git pull'
@@ -33,7 +35,5 @@ alias gf='git fetch'
 alias gpher='git push heroku master'
 alias gbr='git browse'
 alias gx='gitx .'
-alias gpom='git push origin master'
-alias glom='git pull origin master'
 alias gpo='git push origin'
 alias glo='git pull origin'

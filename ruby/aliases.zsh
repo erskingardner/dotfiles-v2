@@ -13,14 +13,15 @@ alias rmig='bundle exec rake db:migrate db:test:clone'
 alias bi="bundle install"
 alias bip="bundle install $BUNDLE_PATH"
 alias cuke='bundle exec cucumber'
-alias auto='bundle exec autotest'
-alias sp='bundle exec rake spec'
-alias powr='touch tmp/restart.txt'
+alias sp='bundle exec rspec'
+
 alias ff3k='open -a Firefox http://localhost:3000'
 alias ch3k='open -a "Google Chrome" http://localhost:3000'
 alias sa3k='open -a Safari http://localhost:3000'
 alias 3k='open http://localhost:3000' # use the default browser
+alias be="bundle exec"
 
-# RVM aliases
-alias rv='ruby -v'
-alias gemsetl='rvm gemset list'
+# Heroku
+alias hercons='heroku run console --remote'
+
+alias restart='touch tmp/restart.txt' # restarts POW
