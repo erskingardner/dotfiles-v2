@@ -1,6 +1,6 @@
 *** IMPORTANT ***
 
-This is a fork from holman's excellent dotfiles. It has helped me make the big switch to zsh. I've customized only the parts that I've needed to customize for my env.
+This is a fork from holman's excellent dotfiles. I've pretty much completely bastardized them since then. Use these at your own peril.
 
 *** /IMPORTANT ***
 
@@ -9,7 +9,7 @@ This is a fork from holman's excellent dotfiles. It has helped me make the big s
 ## dotfiles
 
 Your dotfiles are how you personalize your system. These are mine. The very
-prejudiced mix: OS X, zsh, Ruby, Rails, git, homebrew, rvm, vim. If you
+prejudiced mix: OS X, zsh, Ruby, Rails, git, homebrew, rbenv. If you
 match up along most of those lines, you may dig my dotfiles.
 
 I was a little tired of having long alias files and everything strewn about
