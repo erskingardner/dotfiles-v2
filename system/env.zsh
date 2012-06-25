@@ -1,2 +1,2 @@
-export EDITOR="$HOME/bin/subl -w"
+export EDITOR='subl -w'
 
