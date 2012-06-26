@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Sites
+export PROJECTS=~/Projects
 
 # Intercom! so that we can `in [tab]`
 export INTERCOM=~/Intercom
