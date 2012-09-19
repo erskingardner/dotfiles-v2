@@ -14,6 +14,7 @@ alias bi="bundle install"
 alias bip="bundle install $BUNDLE_PATH"
 alias cuke='bundle exec cucumber'
 alias sp='bundle exec rspec'
+alias rpsp='rake parallel:spec'
 alias tests='bundle exec rspec && bundle exec cucumber'
 
 alias ff3k='open -a Firefox http://localhost:3000'

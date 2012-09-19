@@ -32,3 +32,4 @@ alias dotme='subl ~/.dotfiles'
 
 # ssh aliases
 alias mtssh='ssh jeffgardner.org@s39233.gridserver.com'
+alias inssh='ssh jeff@dev.intercom.io'
