@@ -10,7 +10,7 @@ colors
 setopt prompt_subst
 
 # Prompt
-local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+local smiley="%(?,%{$fg[green]%}✔%{$reset_color%},%{$fg[red]%}✘%{$reset_color%})"
 
 PROMPT='
 %~

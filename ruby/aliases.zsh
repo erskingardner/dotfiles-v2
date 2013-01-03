@@ -23,6 +23,8 @@ alias sa3k='open -a Safari http://localhost:3000'
 alias 3k='open http://localhost:3000' # use the default browser
 alias be="bundle exec"
 
+alias schema_reset='RAILS_ENV=test bundle exec rake db:drop && RAILS_ENV=test bundle exec rake db:create && RAILS_ENV=test bundle exec rake db:migrate'
+
 
 # Heroku
 alias hercons='heroku run console --remote'

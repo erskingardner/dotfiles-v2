@@ -12,3 +12,6 @@
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Super fast key repeat
+defaults write NSGlobalDomain KeyRepeat -int 0
