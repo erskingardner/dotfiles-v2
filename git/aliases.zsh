@@ -22,6 +22,7 @@ alias git=hub
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'

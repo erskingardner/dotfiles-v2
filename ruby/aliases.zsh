@@ -1,9 +1,3 @@
-# Rails 2
-alias sc='script/console'
-alias sg='script/generate'
-alias sd='script/destroy'
-alias ss='./script/server'
-
 # Rails 3
 alias rs='bundle exec rails server'
 alias rg='bundle exec rails generate'
@@ -24,6 +18,8 @@ alias 3k='open http://localhost:3000' # use the default browser
 alias be="bundle exec"
 
 alias schema_reset='RAILS_ENV=test bundle exec rake db:drop && RAILS_ENV=test bundle exec rake db:create && RAILS_ENV=test bundle exec rake db:migrate'
+
+alias z='zeus'
 
 
 # Heroku
