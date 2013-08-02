@@ -15,9 +15,6 @@ alias f='open .'
 # open the current directory as a project with SublimeText
 alias s='subl .'
 
-# open the current directory as a project with TextMate
-alias m='mate .'
-
 # open the current directoy as a project in XCode
 alias xc='open -a XCode .'
 

@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+pull = `git pull`
+
+if pull =~ "Already up-to-date."
+  `echo "Already up-to-date."`
+end
+
+if pull =~ "Gemfile.lock"
+  `echo Bundle Installing`
+  `bundle install`
+end
+
+if pull =~ "schema.rb"
+  `echo Running migrations and cleaning up`
+  `rmig`
+  `git co db/schema.rb`
+end
