@@ -26,21 +26,3 @@ alias mc='muster console'
 alias hercons='heroku run console --remote'
 
 alias restart='touch tmp/restart.txt' # restarts POW
-
-# Refreshes app by pulling, running bundle install, and then rake migrate, then it checksout the schema.rb file to reset any local changes.
-function refreshapp {
-  local pull=$( git pull )
-  if "$pull" | grep -q "Already up-to-date."; then
-    echo "Already up-to-date."
-  else if "$pull" | grep -q "Gemfile.lock"; then
-    echo "Bundle install"
-    bundle install
-  fi
-
-  if "$pull" | grep -q "schema.rb"; then
-    echo "Running migrations"
-    rmig
-    echo "Checking out schema.rb"
-    git co db/schema.rb
-  fi
-}

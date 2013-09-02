@@ -1,20 +1,15 @@
-colorscheme railscasts
+colorscheme molokai
 set anti
-set lines=999 columns=84
+set lines=999 columns=160
 set guioptions=egmrt
+set cursorline
 
 " Command + t to :CommandT
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
+  set guifont=Bitstream\ Vera\ Sans\ Mono:h12
 endif
-
-if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
-  alias vim="Vim"
-fi
-
-export EDITOR="vim -f"
 
 " Open Command+T in a new tab
 let g:CommandTAcceptSelectionTabMap='<CR>'
