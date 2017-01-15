@@ -1,4 +1,4 @@
-# Rails 3
+# Rails
 alias rs='bundle exec rails server'
 alias rg='bundle exec rails generate'
 alias rc='bundle exec rails c'
@@ -18,8 +18,6 @@ alias 3k='open http://localhost:3000' # use the default browser
 alias be="bundle exec"
 
 alias schema_reset='RAILS_ENV=test bundle exec rake db:drop && RAILS_ENV=test bundle exec rake db:create && RAILS_ENV=test bundle exec rake db:migrate'
-
-alias mc='muster console production'
 
 alias up='gl && bi && rmig'
 

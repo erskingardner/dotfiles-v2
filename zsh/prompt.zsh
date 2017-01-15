@@ -23,7 +23,3 @@ RPROMPT='%{$fg_no_bold[bright cyan]%} $(/usr/local/bin/rbenv version-name)$(~/.d
 
 # Show completion on first TAB
 setopt menucomplete
-
-# Load completions for Ruby, Git, etc.
-autoload compinit
-compinit
