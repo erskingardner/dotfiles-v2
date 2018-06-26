@@ -2,13 +2,7 @@
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Projects
-
-# Intercom! so that we can `in [tab]`
-export INTERCOM=~/Intercom
-
-# iOS folder that we can `i [tab]` to
-export iOS=~/iOS
+export SRC=~/src
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
