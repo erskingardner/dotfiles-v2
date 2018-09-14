@@ -39,7 +39,6 @@ pretty_git_log() {
 }
 
 prune_merged_branches() {
-    git branch --merged |
-    grep -v "\*" |
-    xargs -n 1 git branch -d
+    git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
 }
+
