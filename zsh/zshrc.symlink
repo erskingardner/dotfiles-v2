@@ -1,10 +1,8 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export ZSH=$HOME/src/dotfiles-v2
 
 # your project folder that we can `c [tab]` to
 export SRC=~/src
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
@@ -25,28 +23,6 @@ for config_file ($ZSH/**/completion.sh) source $config_file
 
 # This loads rbenv.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Use different iTerm profile for production console
-function set_iterm_profile() {
-    echo -e "\033]50;SetProfile=$1\a"
-}
-
-# Production - needs hammer etc. installed
-alias hc='set_iterm_profile production ; hammer console production intercom-production-console ; set_iterm_profile Default'
-
-# Add the host afterwards: ssh-production foo.bar.com
-function ssh-production (){
-    set_iterm_profile production ; ssh -i "~/.ssh/mms_key.pem" $1 ; set_iterm_profile Default
-}
-
-# Connect to mongo host mms-mongo-1-10.aws-production-1.3437.mongodbdns.com: ssh-m 10
-function ssh-m (){
-    ssh-production "mms-mongo-1-$1.aws-production-1.3437.mongodbdns.com"
-}
-
-export INTERCOM_USER=jeff
-export PATH=$HOME/.pilot/bin:$PATH
-eval $(pilot env)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

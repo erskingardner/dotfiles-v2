@@ -20,8 +20,3 @@ alias be="bundle exec"
 alias schema_reset='RAILS_ENV=test bundle exec rake db:drop && RAILS_ENV=test bundle exec rake db:create && RAILS_ENV=test bundle exec rake db:migrate'
 
 alias up='gl && bi && rmig'
-
-# Heroku
-alias hercons='heroku run console --remote'
-
-alias restart='touch tmp/restart.txt' # restarts POW

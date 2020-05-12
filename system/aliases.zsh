@@ -12,11 +12,8 @@ fi
 # open the current directory with Finder.app
 alias f='open .'
 
-# open the current directory as a project with SublimeText
-alias s='subl .'
-
-# open the current directoy as a project in XCode
-alias xc='open -a XCode .'
+# open the current directory as a project with atom
+alias a='atom .'
 
 # create dir and cd into it
 function take {
@@ -24,5 +21,5 @@ function take {
   cd $1
 }
 
-# open dotfiles project with textmate
-alias dotme='subl ~/.dotfiles'
+# open dotfiles project with atom
+alias dotme='atom ~/src/dotfiles-v2'

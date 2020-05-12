@@ -16,10 +16,8 @@ PROMPT='
 %~
 ${smiley}  %{$reset_color%}'
 
-#RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/.dotfiles/bin/git-cwd-info)%{$reset_color%}'
-
 # Replace the above with this if you use rbenv
-RPROMPT='%{$fg_no_bold[bright cyan]%} $(/usr/local/bin/rbenv version-name)$(~/.dotfiles/bin/git-cwd-info)%{$reset_color%}'
+RPROMPT="%{$fg_no_bold[bright cyan]%} $(/usr/local/bin/rbenv version-name)$($ZSH/bin/git-cwd-info)%{$reset_color%}"
 
 # Show completion on first TAB
 setopt menucomplete
