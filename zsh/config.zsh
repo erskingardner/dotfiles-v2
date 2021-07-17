@@ -1,9 +1,3 @@
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
-else
-  export PS1='%3~$(git_info_for_prompt)%# '
-fi
-
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
@@ -37,6 +31,11 @@ setopt HIST_REDUCE_BLANKS
 #   like: git comm-[tab]
 setopt complete_aliases
 
+# Colors
+autoload -U colors
+colors
+setopt prompt_subst
+
 zle -N newtab
 
 bindkey '^[^[[D' backward-word
@@ -46,3 +45,21 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+# GRC colorizes nifty unix tools all over the place
+if $(grc &>/dev/null)
+then
+  source `brew --prefix` bin/grc.bashrc
+fi
+
+# grc overides for ls
+#   Made possible through contributions from generous benefactors like
+#   `brew install coreutils`
+if $(gls &>/dev/null)
+then
+  alias ls="gls -F --color"
+  alias l="gls -lAh --color"
+  alias ll="gls -l --color"
+  alias la='gls -A --color'
+fi
+

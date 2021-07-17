@@ -1,31 +1,92 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/src/dotfiles-v2
+PROMPT='%F{084}%n@%m:%f %F{068}%~%f %% '
 
-# your project folder that we can `c [tab]` to
-export SRC=~/src
+# autocomplete on partial commands
+autoload history-search-end
+zle -N history-beginning-search-backward-end \
+         history-search-end
+zle -N history-beginning-search-forward-end \
+         history-search-end
+bindkey '^[[A' history-beginning-search-backward-end
+bindkey '^[[B' history-beginning-search-forward-end
 
-# source every .zsh file in this rep
-for config_file ($ZSH/**/*.zsh) source $config_file
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
+
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+
+setopt NO_BG_NICE # don't nice background tasks
+setopt NO_HUP
+setopt NO_LIST_BEEP
+setopt LOCAL_OPTIONS # allow functions to have local options
+setopt LOCAL_TRAPS # allow functions to have local traps
+setopt HIST_VERIFY
+setopt SHARE_HISTORY # share history between sessions ???
+setopt EXTENDED_HISTORY # add timestamps to history
+setopt PROMPT_SUBST
+setopt CORRECT
+setopt COMPLETE_IN_WORD
+setopt IGNORE_EOF
+
+setopt APPEND_HISTORY # adds history
+setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
+
+# don't expand aliases _before_ completion has finished
+#   like: git comm-[tab]
+setopt complete_aliases
+
+zle -N newtab
+
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[[5D' beginning-of-line
+bindkey '^[[5C' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[^N' newtab
+bindkey '^?' backward-delete-char
+
+# Colors
+autoload -U colors
+colors
+setopt prompt_subst
+
+# GRC colorizes nifty unix tools all over the place
+if $(grc &>/dev/null)
 then
-  source ~/.localrc
+  source `brew --prefix` bin/grc.bashrc
 fi
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit -u
+# grc overides for ls
+#   Made possible through contributions from generous benefactors like
+#   `brew install coreutils`
+if $(gls &>/dev/null)
+then
+  alias ls="gls -F --color"
+  alias l="gls -lAh --color"
+  alias ll="gls -l --color"
+  alias la='gls -A --color'
+fi
 
-# load every completion after autocomplete loads
-for config_file ($ZSH/**/completion.sh) source $config_file
+# Aliases
+# open the current directory with Finder.app
+alias f='open .'
 
-# This loads rbenv.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# open the current directory as a project with sublime
+alias s='subl .'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# create dir and cd into it
+function take {
+  mkdir $1
+  cd $1
+}
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+alias reload!='. ~/.zshrc'

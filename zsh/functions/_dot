@@ -1,2 +1,0 @@
-#compdef dot
-_files -W $ZSH -/
